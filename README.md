@@ -6,6 +6,7 @@ low-fidelity (LF) simulation by predicting the high-fidelity (HF) result.
 ## How to run
 
 1 - 
+Download and extract the dataset from: [PENDING ON ZENODO DATASET]
 Extract the `datasets.zip`
 
 2 - 
