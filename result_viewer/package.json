@@ -1,0 +1,15 @@
+{
+  "name": "result-viewer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "NACA Cp prediction result viewer (Express + ECharts)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "echarts": "^6.1.0",
+    "express": "^5.3.0"
+  }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NACA Cp Result Viewer</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="/vendor/echarts.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="brand">NACA <span>Cp Result Viewer</span></div>
+    <div class="controls">
+      <label>Result file
+        <select id="fileSel"><option value="">Loading…</option></select>
+      </label>
+      <button id="uploadBtn" class="ghost">Upload file…</button>
+      <input type="file" id="filePick" accept=".csv,.json,application/json,text/plain" hidden>
+    </div>
+  </header>
+
+  <main>
+    <section id="stats" class="stats" aria-live="polite"></section>
+
+    <div class="layout">
+      <section class="panel" id="tablePanel">
+        <h2>Simulations</h2>
+        <div class="tablewrap">
+          <table id="simTable"></table>
+        </div>
+      </section>
+
+      <section class="panel chart">
+        <div id="chart"></div>
+        <div id="errChart"></div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast"></div>
+</body>
+</html>
