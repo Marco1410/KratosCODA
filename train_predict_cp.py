@@ -326,7 +326,7 @@ class HF_Predictor(nn.Module):
             act_sq = act_sq + torch.sum(ln ** 2) / B
 
         # elementwise fusion (Keras layers.Add)
-        z = ln + nl + cv                                     # (B, L, layer_size)
+        z = ln + nl + global_features.unsqueeze(1)           # (B, L, layer_size)
         out = self.head(z)                                   # (B, L, 1)
 
         self._act_sq = act_sq
@@ -455,10 +455,7 @@ def train_model(model, train_x, train_y, batch_size, num_epochs,
 
                 vpred = model(valid_x).squeeze(-1)
 
-                vloss = curve_loss(
-                    vpred, valid_y,
-                    lambda_deriv=lambda_deriv
-                ).item()
+                vloss = loss_f(vpred, valid_y).item()
 
             monitored_loss = vloss
 
