@@ -49,15 +49,6 @@ A standalone Node/Express + ECharts web app (`result_viewer/`) to browse the
 `results/` CSVs, compare PRED vs LF vs HF, and read off shock locations and errors.
 This code of the visualizer has been partially generated with AI assistance.
 
-![NACA Cp Result Viewer](webviewerplot.jpeg)
-
-The interface shows, at the top, the prediction error chi², LF baseline chi²,
-RMSE PRED-HF and the shock locations for PRED / LF / HF with their location
-errors. On the left, a sortable table lists every simulation; on the right,
-the main chart plots `-Cp` versus chord `x` for HF, PRED and LF with vertical
-markers at each shock, and the lower chart shows the Cp deviation between
-PRED-HF and LF-HF along the chord.
-
 ```bash
 cd result_viewer
 npm install          # once
@@ -79,3 +70,12 @@ upper surface.
 
 The `results/` directory is resolved from the script's parent dir and can be
 overridden with the `RESULTS_DIR` env var.
+
+![NACA Cp Result Viewer](webviewerplot.jpeg)
+
+The interface shows, at the top, the prediction error chi², LF baseline chi²,
+RMSE PRED-HF and the shock locations for PRED / LF / HF with their location
+errors. On the left, a sortable table lists every simulation; on the right,
+the main chart plots `-Cp` versus chord `x` for HF, PRED and LF with vertical
+markers at each shock, and the lower chart shows the Cp deviation between
+PRED-HF and LF-HF along the chord.
