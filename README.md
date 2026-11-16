@@ -70,3 +70,12 @@ upper surface.
 
 The `results/` directory is resolved from the script's parent dir and can be
 overridden with the `RESULTS_DIR` env var.
+
+![NACA Cp Result Viewer](webviewerplot.jpeg)
+
+The interface shows, at the top, the prediction error chi², LF baseline chi²,
+RMSE PRED-HF and the shock locations for PRED / LF / HF with their location
+errors. On the left, a sortable table lists every simulation; on the right,
+the main chart plots `-Cp` versus chord `x` for HF, PRED and LF with vertical
+markers at each shock, and the lower chart shows the Cp deviation between
+PRED-HF and LF-HF along the chord.
